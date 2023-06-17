@@ -35,7 +35,9 @@ public class PlatformGenerator : MonoBehaviour
 
             transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
 
-            Instantiate (thePlatform, transform.position, transform.rotation);
+            playformSelector = Random.Range(0, thePlatforms.Length);
+
+            Instantiate (/*thePlatform*/ thePlatforms[playformSelector], transform.position, transform.rotation);
             /*GameObject newPlatform = theObjectPool.GetPooledObject();
 
             newPlatform.transform.position = transform.position;
