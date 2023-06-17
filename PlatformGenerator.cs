@@ -17,16 +17,23 @@ public class PlatformGenerator : MonoBehaviour
 
     public GameObject[] thePlatforms;
     private int playformSelector;
+    private float[] platformWidths;
 
     //public ObjectPooler theObjectPool;
 
-    // Start is called before the first frame update
     void Start()
     {
-        platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+        //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+
+        platformWidths = new float[thePlatforms.Length];
+
+        for (int i = 0; i < thePlatforms.Length; i++)
+        {
+            
+        }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(transform.position.x < generationPoint.position.x)
