@@ -15,6 +15,9 @@ public class PlatformGenerator : MonoBehaviour
     public float distanceBetweenMin;
     public float distanceBetweenMax;
 
+    public GameObject[] thePlatforms;
+    private int playformSelector;
+
     //public ObjectPooler theObjectPool;
 
     // Start is called before the first frame update
