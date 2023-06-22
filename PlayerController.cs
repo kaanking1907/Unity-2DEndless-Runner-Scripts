@@ -53,6 +53,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyUp (KeyCode.Space) || Input.GetMouseButtonUp(0))
+        {
+            jumpTimeCounter = 0;
+        }
+
+        if (grounded)
+        {
+            jumpTimeCounter = jumpTime;
+        }
+
         myAnimator.SetFloat ("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool ("Grounded", grounded);
     }
