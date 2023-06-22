@@ -24,7 +24,8 @@ public class PlatformGenerator : MonoBehaviour
     private float minHeight;
     public Transform maxHeightPoint;
     private float maxHeight;
-    
+    public float maxHeightChange;
+    private float heightChange;
 
     void Start()
     {
@@ -37,6 +38,9 @@ public class PlatformGenerator : MonoBehaviour
             platformWidths[i] = thePlatforms[i].GetComponent<BoxCollider2D>().size.x;
         }
 
+        minHeight = transform.position.y;
+        maxHeight = maxHeightPoint.position.y;
+
     }
 
     void Update()
@@ -47,7 +51,18 @@ public class PlatformGenerator : MonoBehaviour
 
             platformSelector = Random.Range(0, thePlatforms.Length);
 
-            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
+            heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
+
+            if(heightChange > maxHeight)
+            {
+                heightChange = maxHeight;
+            }
+            else if (heightChange < minHeight)
+            {
+                heightChange = minHeight;
+            }
+
+            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, heightChange, transform.position.z);
 
             
 
