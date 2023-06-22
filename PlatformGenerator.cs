@@ -21,6 +21,11 @@ public class PlatformGenerator : MonoBehaviour
 
     //public ObjectPooler theObjectPool;
 
+    private float minHeight;
+    public Transform maxHeightPoint;
+    private float maxHeight;
+    
+
     void Start()
     {
         //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
