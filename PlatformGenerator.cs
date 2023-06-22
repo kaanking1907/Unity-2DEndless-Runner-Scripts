@@ -29,7 +29,7 @@ public class PlatformGenerator : MonoBehaviour
 
         for (int i = 0; i < thePlatforms.Length; i++)
         {
-            platformWidth[1] = thePlatforms[i].GetComponent<BoxCollider2D>().size.x;
+            platformWidths[i] = thePlatforms[i].GetComponent<BoxCollider2D>().size.x;
         }
 
     }
@@ -40,9 +40,9 @@ public class PlatformGenerator : MonoBehaviour
         {
             distanceBetween = Random.Range (distanceBetweenMin, distanceBetweenMax);
 
-            playformSelector = Random.Range(0, thePlatforms.Length);
+            platformSelector = Random.Range(0, thePlatforms.Length);
 
-            transform.position = new Vector3(transform.position.x + platformWidth[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
 
             
 
