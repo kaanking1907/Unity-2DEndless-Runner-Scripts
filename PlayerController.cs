@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             speedMilesStoneCount += speedIncreaseMilesStone;
 
-            moveSpeed = moveSpeed * speedMultiplier
+            moveSpeed = moveSpeed * speedMultiplier;
         }
 
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
