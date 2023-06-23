@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator myAnimator;
 
+    public GameManager theGameManager;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -85,8 +87,11 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetFloat ("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool ("Grounded", grounded);
     }
-    void OnCollisionEnter2D (Coliision2D other)
+    void OnCollisionEnter2D (Collision2D other)
     {
-        if (other.gameObject.tag)
+        if (other.gameObject.tag == "killbox")
+        {
+            theGameManager.RestartGame();
+        }
     }
 }
