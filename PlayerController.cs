@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
         myAnimator = GetComponent<Animator>();
 
         jumpTimeCounter = jumpTime;
+
+        speedMilesStoneCount = speedIncreaseMilesStone;
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             speedMilesStoneCount += speedIncreaseMilesStone;
 
+            speedIncreaseMilesStone += speedIncreaseMilesStone * speedMultiplier;
             moveSpeed = moveSpeed * speedMultiplier;
         }
 
