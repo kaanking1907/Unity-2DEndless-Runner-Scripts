@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public float speedMultiplier;
+
+    public float speedIncreaseMilesStone;
+    private float speedMilesStoneCount;
+
     public float jumpForce;
 
     public float jumpTime;
@@ -33,6 +38,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.IsTouchingLayers(myCollider, WhatIsGround);
+
+        if(transform.position.x > speedMilesStoneCount)
+        {
+            speedMilesStoneCount += speedIncreaseMilesStone;
+
+            moveSpeed = moveSpeed * speedMultiplier
+        }
 
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
         
