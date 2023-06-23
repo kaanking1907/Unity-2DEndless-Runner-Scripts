@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         //grounded = Physics2D.IsTouchingLayers(myCollider, WhatIsGround);
 
-        grounded = Physics2D.OverLapCircle(gorundCheck.position, groundCheckRadius, WhatIsGround);
+        grounded = Physics2D.OverlapCircle(gorundCheck.position, groundCheckRadius, WhatIsGround);
 
         if(transform.position.x > speedMilesStoneCount)
         {
