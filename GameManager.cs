@@ -11,14 +11,12 @@ public class GameManager : MonoBehaviour
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
