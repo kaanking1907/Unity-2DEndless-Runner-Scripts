@@ -35,5 +35,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         thePlayer.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
+        thePlayer.gameObject.SetActive(true);
     }
 }
