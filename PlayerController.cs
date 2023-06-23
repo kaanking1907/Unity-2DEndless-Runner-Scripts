@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             speedMilesStoneCount += speedIncreaseMilesStone;
 
-            speedIncreaseMilesStone += speedIncreaseMilesStone * speedMultiplier;
+            speedIncreaseMilesStone = speedIncreaseMilesStone * speedMultiplier;
             moveSpeed = moveSpeed * speedMultiplier;
         }
 
