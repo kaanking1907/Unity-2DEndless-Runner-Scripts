@@ -27,7 +27,7 @@ public class ObjectPooler : MonoBehaviour
     {
         for ( int i = 0; i < pooledObjects.Count; i++)
         {
-            if(pooledObjects[i].activeInHierarchy)
+            if(!pooledObjects[i].activeInHierarchy)
             {
                 return pooledObjects[i];
             }
