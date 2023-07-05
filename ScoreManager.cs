@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        if(!PlayerPrefs.GetInt("HighScore") != null)
+        if(PlayerPrefs.HasKey("HighScore"))
         {
             hiScoreCount = PlayerPrefs.GetFloat("HighScore");
         }
