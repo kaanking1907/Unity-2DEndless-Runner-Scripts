@@ -5,6 +5,17 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+
+    public Text scoreText;
+    public Text hiScoreText;
+
+    public float scoreCount;
+    public float hiScoreCount;
+
+    public float pointsPerSecond;
+
+    public bool scoreIncreasing;
+
     void Start()
     {
         
@@ -13,5 +24,8 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         
+        scoreText.text = "Score: " + scoreCount;
+        hiScoreCount.text = "High Score: " + hiScoreCount;
+
     }
 }
