@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
 
+    private PlatformDestroyer[] platformList;
+
     void Start()
     {
         platformStartPoint = platformGenerator.position;
@@ -31,6 +33,12 @@ public class GameManager : MonoBehaviour
     {
         thePlayer.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
+        platformList = FindObjectsOfType<PlatformDestroyer>();
+        for(int i = 0; i < platformList.Length; i++)
+        {
+            platformList[i].gameObject.SetActive(false);
+        }
+
         thePlayer.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         thePlayer.gameObject.SetActive(true);
