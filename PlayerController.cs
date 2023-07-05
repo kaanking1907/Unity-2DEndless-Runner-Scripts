@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    private float moveSpeedStore;
     public float speedMultiplier;
 
     public float speedIncreaseMilesStone;
+    private float speedIncreaseMilesStoneStore;
+
     private float speedMilesStoneCount;
+    private float speedMilesStoneCountStore;
 
     public float jumpForce;
 
@@ -39,6 +43,10 @@ public class PlayerController : MonoBehaviour
         jumpTimeCounter = jumpTime;
 
         speedMilesStoneCount = speedIncreaseMilesStone;
+
+        moveSpeedStore = moveSpeed;
+        speedMilesStoneCountStore = speedMilesStoneCount;
+        speedIncreaseMilesStoneStore = speedIncreaseMilesStone;
     }
 
     void Update()
@@ -91,7 +99,11 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "killbox")
         {
+            
             theGameManager.RestartGame();
+            moveSpeed = moveSpeedStore;
+            speedMilesStoneCount = speedMilesStoneCountStore;
+            speedIncreaseMilesStone = speedIncreaseMilesStoneStore;
         }
     }
 }
