@@ -11,11 +11,20 @@ public class pickupPoints : MonoBehaviour
 
     void Start()
     {
-        
+        theScoreManager = FindObjestOfType<ScoreManager>();
     }
 
     void Update()
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.name == "Player")
+        {
+            theScoreManager.AddScore(scoreToGive);
+        }
+    }
+
 }
