@@ -11,7 +11,7 @@ public class pickupPoints : MonoBehaviour
 
     void Start()
     {
-        theScoreManager = FindObjestOfType<ScoreManager>();
+        theScoreManager = FindObjectOfType<ScoreManager>();
     }
 
     void Update()
