@@ -7,15 +7,21 @@ public class CoinGenerator : MonoBehaviour
 
     public ObjectPooler coinPool;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float distanceBetweenCoins;
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnCoins (Vector3 startPosition)
     {
-        
+        GameObject coin1 = coinPool.GetPooledObject();
+        coin1.transform.position = startPosition;
+        coin1.SetActive(true);
+
+        GameObject coin2 = coinPool.GetPooledObject();
+        coin1.transform.position = startPosition;
+        coin1.SetActive(true);
+
+        GameObject coin3 = coinPool.GetPooledObject();
+        coin1.transform.position = startPosition;
+        coin1.SetActive(true);
     }
 }
+
