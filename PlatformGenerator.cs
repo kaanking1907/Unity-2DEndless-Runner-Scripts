@@ -27,6 +27,8 @@ public class PlatformGenerator : MonoBehaviour
     public float maxHeightChange;
     private float heightChange;
 
+    private CoinGenerator theCoinGenerator;
+
     void Start()
     {
         //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
