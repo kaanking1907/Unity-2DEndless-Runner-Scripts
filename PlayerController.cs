@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0) && !stoppedJumping)
+        if ((Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0)) && !stoppedJumping)
         {
             if (jumpTimeCounter > 0)
             {
