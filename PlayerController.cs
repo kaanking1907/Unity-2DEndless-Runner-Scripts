@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float jumpTime;
     private float jumpTimeCounter;
 
+    private bool stoppedJumping;
+
     private Rigidbody2D myRigidbody;
 
     public bool grounded; 
@@ -70,10 +72,11 @@ public class PlayerController : MonoBehaviour
             if(grounded)
             {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+                stoppedJumping = false;
             }
         }
 
-        if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0))
+        if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0) && !stoppedJumping)
         {
             if (jumpTimeCounter > 0)
             {
