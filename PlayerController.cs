@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeCounter;
 
     private bool stoppedJumping;
+    private bool canDoubleJump;
 
     private Rigidbody2D myRigidbody;
 
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
         moveSpeedStore = moveSpeed;
         speedMilesStoneCountStore = speedMilesStoneCount;
         speedIncreaseMilesStoneStore = speedIncreaseMilesStone;
+
+        stoppedJumping = true;
     }
 
     void Update()
@@ -88,11 +91,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp (KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
             jumpTimeCounter = 0;
+            stoppedJumping = true;
         }
 
         if (grounded)
         {
             jumpTimeCounter = jumpTime;
+            canDoubleJump = true;
         }
 
         myAnimator.SetFloat ("Speed", myRigidbody.velocity.x);
